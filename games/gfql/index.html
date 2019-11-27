@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>干翻情敌</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+ 
+    <link rel="icon" type="image/GIF" href="res/favicon.ico"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <style>
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+</head>
+
+<span style="display:none">
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253762089'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1253762089' type='text/javascript'%3E%3C/script%3E"));</script>
+</span>
+
+<body style="padding:0; margin: 0; background: #000;">
+<canvas id="gameCanvas" width="800" height="450"></canvas>
+<script type="text/javascript" src="WeixinApi.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        window.wxData = {
+            "appId": "", //服务号可以填写appId
+            "imgUrl":'http://ifinger.sinaapp.com/gameicon.png',
+            "link":'http://ifinger.sinaapp.com/',
+            "desc":"敢不敢干翻情敌，抱得美人归？",
+            "title":"干翻情敌"
+        };
+        WeixinApi.ready(function(Api) {
+            var wxCallbacks = {
+                ready : function() {
+                },
+                cancel : function(resp) {
+                },
+                fail : function(resp) {
+                },
+                confirm : function(resp) {
+                },
+                all : function(resp) {
+                }
+            };
+            Api.shareToFriend(wxData, wxCallbacks);
+            Api.shareToTimeline(wxData, wxCallbacks);
+            Api.shareToWeibo(wxData, wxCallbacks);
+        });
+    </script>
+    
+<script src="game.min.js"></script>
+<script  type="text/JavaScript">
+window.shareData={
+  'title':'干翻情敌',
+  'link':'http://localhost/games/gfql/',
+  'imgurl':'http://localhost/games/gfql/icon.png'
+}
+window.shareFriendData={
+  'title':'干翻情敌',
+  'content':'关注云中云微信小游戏,更多好玩的游戏等着你。',
+  'link':'http://localhost/games/gfql/',
+  'imgurl':'http://localhost/games/gfql/icon.png'
+}
+</script>
+<script type="text/JavaScript" src="http://gc.veiying.cn/code"></script>
+</body>
+</html>

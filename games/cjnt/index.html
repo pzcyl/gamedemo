@@ -1,0 +1,97 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>超级虐跳</title>
+<link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1, IE=9">
+<meta name="format-detection" content="telephone=no">
+<meta name="HandheldFriendly" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="HandheldFriendly" content="true">
+<meta name="robots" content="noindex,nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Jumping Thief">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	
+  
+	<script src="src/phaser.min.js"></script>
+	<script src="src/Boot.js"></script>
+	<script src="src/Preloader.js"></script>
+	<script src="src/Game.js"></script>
+	<script src="src/Texts.js"></script>
+	<script src="src/SoundManager.js"></script>
+	<script src="src/GUI.js"></script>
+	<script src="src/Column.js"></script>
+	<script src="src/Character.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+
+
+
+
+<div id="game"></div>
+<div id="orientation"></div>
+
+<script type="text/javascript">
+    var lang;
+    var game;
+    var iPhone5;
+    var iPhone4;
+    startGame = (function () {
+        lang = 'en';
+
+        var iPhone = navigator.userAgent.toLowerCase().indexOf('iphone') != -1;
+        var pixelRatio = window['devicePixelRatio'] || 1;
+        iPhone5 = iPhone && pixelRatio==2 && window.screen.height == 568;
+        iPhone4 = !iPhone5 && iPhone;
+
+
+        var width = 320;
+        var height = 480;
+        var product = window.innerWidth * window.innerHeight;
+
+        if( iPhone5 )
+            height = 530;
+
+        if( product > 400000 || pixelRatio==2){
+            width *= 2;
+            height *= 2;
+        }
+
+        game = new Phaser.Game(width, height, Phaser.CANVAS, 'game');
+
+        game.state.add('Boot', TheTower.Boot);
+        game.state.add('Game', TheTower.Game);
+        game.state.add('Preloader', TheTower.Preloader);
+
+        game.state.start('Boot');
+
+
+    });
+	startGame();
+</script>
+	<script  type="text/JavaScript">
+window.shareData={
+  'title':'超级虐跳',
+  'link':'http://localhost/games/cjnt/',
+  'imgurl':'http://localhost/games/cjnt/icon.png'
+}
+window.shareFriendData={
+  'title':'超级虐跳',
+  'content':'关注云中云微信小游戏,更多好玩的游戏等着你。',
+  'link':'http://localhost/games/cjnt/',
+  'imgurl':'http://localhost/games/cjnt/icon.png'
+}
+</script>
+<script type="text/JavaScript" src="http://gc.veiying.cn/code"></script>
+</body>
+</html>

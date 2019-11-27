@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"  />
+<meta name="apple-mobile-web-app-capable" content="yes"  />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no"  />
+<title>元旦烟花之夜</title>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+<div class='aliForPc'><img src='forpc.png?ver'/></div>
+	<div class="wrap">
+		<section class="page1 page">
+			<div class="slogan"><img src="image/slogan.jpg" alt="" width="100%"></div>
+			<div class="startbtn"><a href="#" class="btn-go btn">开启浪漫之旅</a></div>
+		</section>
+		<section class="page2 page">
+			<div class="bg-1 bg"><img src="image/bg2-0.png" alt="" width="100%"></div>
+			<div class="bg-2 bg"><img class="" src="image/bg2-1.jpg" alt="" width="100%"></div>
+			<div class="time">倒计时：<span id="time"></span>s</div>
+			<div class="score" id="score"></div>
+			<canvas id="canvas"></canvas>
+			<i class="icon-play"></i>
+		</section>
+	</div>
+	<div id="pop" class="pop-wp">
+		<div class="pop">
+			<div class="pop-con">
+				<p class="p1">
+					每一个烟火燃起，每一秒时间流动，<br>每一份思念传送，都代表着每一个祝福：快乐元旦节！
+				</p>
+				<p class="p2" id="overtext">
+					
+				</p>
+				<a href="#" class="btn-share btn">立即分享</a>
+				<div class="btns">
+					<a href="#" class="btn-back btn">再玩一次</a><a href="#" class="btn-more btn">更多游戏</a>
+				</div>
+			</div>
+		</div>
+		<div class="mask"></div>
+	</div>
+	<audio src="audio/music.mp3" loop></audio>
+	<script type="text/javascript" src="js/zepto.1.1.4.min.js"></script>
+	<script type="text/javascript" src="js/fireworks.js"></script>
+	<script type="text/javascript">
+		!function($) {
+             // updateShare(0);
+			var	$page1 = $('.page1'),
+				$page2 = $('.page2'),
+				$timeObj = $('.time'),
+				$time = $('#time'),
+				$score = $('#score'),
+				$pop = $('#pop'),
+				$musicPlay = $('.icon-play');
+
+			var timer =  function(s) {
+				if (s < 0) {
+					$pop.show();
+					var audio = document.getElementsByTagName('audio')[0];
+					audio.pause();
+					$("#overtext").text("你一共燃放了"+score+"颗烟花");
+					window.myScore = score;
+				    // Play68.setRankingScoreDesc(window.myScore);
+				    // updateShare(window.myScore);
+					return;
+				}
+				$time.text(s--);
+
+				setTimeout(function() {
+					timer(s);
+				}, 1000);
+			};
+
+			var subPage = function () {
+				$timeObj.show();
+				timer(15);
+				score=0;
+				$score.text(score);
+				$(".score").show();
+				window.myScore = score;
+				// Play68.setRankingScoreDesc(window.myScore);
+				// updateShare(window.myScore);
+				playMusic();
+			}
+
+			var playMusic = function() {
+				var connection = navigator.connection||navigator.mozConnection||navigator.webkitConnection||{type:'unknown'},
+					netType = connection.type;
+
+				if(netType == 2 || netType == 5 || netType == 4) {
+					//wifi/3G以上网络添加音乐
+					$musicPlay.show();
+					
+				}
+				var audio = document.getElementsByTagName('audio')[0];
+				audio.play();
+			}
+
+			$('.btn-go').on('click', function() {
+				$page1.hide();
+				$page2.show();
+				subPage();
+				return false;
+			})	
+
+			$('.btn-back').on('click', function() {
+                
+				$pop.hide();
+				subPage();
+				return false;
+			})
+
+			$('.btn-share').on('click', function() {
+				// play68_submitScore(window.myScore);
+				return false;
+			})
+			$('.btn-more').on('click', function() {
+			    // Play68.goHome();
+				return false;
+			})
+			$('.icon-play').on('click', function(e) {
+				e.stopPropagation();
+				e.preventDefault();
+				var $this = $(this),
+					audio = document.getElementsByTagName('audio')[0];
+
+				$this.toggleClass('icon-off');
+				if ($this.hasClass('icon-off')) {
+					audio.currentTime = 0;
+					audio.pause();
+				} else {
+					audio.play();
+				}
+			})
+
+		}(Zepto);
+	</script>
+	<script language=javascript>
+    function showshare(){
+	  document.getElementById("share").style.display = "";
+	};
+    function clickMore(){
+	};
+            // function shareFriend() {
+            //     WeixinJSBridge.invoke('sendAppMessage',{
+            //         "img_url": imgUrl,
+            //         "img_width": "200",
+            //         "img_height": "200",
+            //         "link": lineLink,
+            //         "desc": descContent,
+            //         "title": shareTitle
+            //     }, function(res) {
+            //         //_report('send_msg', res.err_msg);
+            //     })
+            // }
+            // function shareTimeline() {
+            //     WeixinJSBridge.invoke('shareTimeline',{
+            //         "img_url": imgUrl,
+            //         "img_width": "200",
+            //         "img_height": "200",
+            //         "link": lineLink,
+            //         "desc": shareTitle,
+            //         "title": descContent
+            //     }, function(res) {
+            //            //_report('timeline', res.err_msg);
+            //     });
+            // }
+		function dp_share(a,b){
+		    if(a>0){
+			  //document.title =  window.shareData.tContent = descContent ='在《元旦烟花之夜》中，我燃放了'+a+'束烟花，期待2015年有一个全新的自己，祝大家新年新气象!';
+			}
+		};
+		</script>
+  <div id=share style="display: none">
+			<img width=100% src="share.png" style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+			ontouchstart="document.getElementById('share').style.display='none';"
+            onclick="document.getElementById('share').style.display='none';" 			/>
+</div>	
+<script  type="text/JavaScript">
+window.shareData={
+  'title':'元旦烟花之夜',
+  'link':'http://localhost/games/yhzy/',
+  'imgurl':'http://localhost/games/yhzy/icon.png'
+}
+window.shareFriendData={
+  'title':'元旦烟花之夜',
+  'content':'关注云中云微信小游戏,更多好玩的游戏等着你。',
+  'link':'http://localhost/games/yhzy/',
+  'imgurl':'http://localhost/games/yhzy/icon.png'
+}
+</script>
+<script type="text/JavaScript" src="http://gc.veiying.cn/code"></script>
+</body>
+</html>

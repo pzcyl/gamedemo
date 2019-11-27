@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no width=device-width">
+
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <title>画个圆-柒柒游戏</title>
+    <link rel="stylesheet" href="circle/css/style.css">
+    <STYLE TYPE="text/css" MEDIA=screen>
+    #desktop-ad {
+        display: block;
+        margin-left: -160px;
+        width: 320px;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        z-Index: 1000;
+        text-align: center;
+    }
+    </STYLE>
+    <script src="jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript" language="JavaScript">
+        function HideContent(d) {
+            $('#' + d).hide();
+        }
+        function ShowContent(d) {
+            $('#' + d).show(1000);
+        }
+    </script>
+    <script type="text/javascript" src="circle/js/cookies.js"></script>
+    <script src="ajax/libs/paper.js/0.9.18/paper-full.min.js"></script>
+    <script type="text/paperscript" canvas="canvas" src="circle/js/circle_origin.js"></script>
+ 
+
+</head>
+<body >
+    <canvas id="canvas" resize stats hidpi="on"></canvas>
+    <div id="inputpage">
+        <div id="middle">
+            <div id="name_form">
+                <p>载入中，请稍等。。。</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var loading = true;
+    </script>
+
+<script  type="text/JavaScript">
+window.shareData={
+  'title':'画个圆',
+  'link':'http://www.dede168.com/games/hgy/',
+  'imgurl':'http://www.dede168.com/games/hgy/icon.png'
+}
+window.shareFriendData={
+  'title':'画个圆',
+  'content':'关注云中云微信小游戏,更多好玩的游戏等着你。',
+  'link':'http://www.dede168.com/games/hgy/',
+  'imgurl':'http://www.dede168.com/games/hgy/icon.png'
+}
+</script>
+<script type="text/JavaScript" src="http://gc.veiying.cn/code"></script>
+</body>
+</html>

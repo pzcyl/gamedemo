@@ -1,0 +1,71 @@
+@charset "utf-8";
+/**
+* 微信2014圣诞节活动
+* Author : BingleDing
+* Date : 2014-12-19
+*/ 
+/*reset*/
+body,div,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,iframe,input,textarea,select,label,article,aside,footer,header,menu,nav,section,time,audio,video { margin:0; padding:0; }
+article,aside,footer,header,hgroup,nav,section,audio,canvas,video,img { display: block; }
+body{ text-align:left; font:12px/1.5 Helvetica,STHeiti,Arial; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #676767; }
+h1,h2,h3,h4,h5,h6{ font-size: 100%; font-weight: normal; }
+img{ border:0; }
+ul,li{ list-style:none; }
+i,em{ font-style:normal; }
+input{ font-size:1.2em; vertical-align: middle; }
+table{ border-collapse: collapse; }
+* { -webkit-tap-highlight-color: rgba(0,0,0,0); }
+a,.link{ -webkit-user-select:none; -webkit-user-drag:none; -webkit-tap-highlight-color:rgba(0,0,0,0); text-decoration: none; }
+a,a:link{ color: #FFCB40; }
+.tdu{ text-decoration: underline; }
+.hidetxt,.btn{ overflow:hidden; font: 0/0 sans-serif;}
+.clear:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clear { zoom: 1; }
+
+html,body,.wrap{height: 100%;}
+body,.wrap{-webkit-background-size: 100% auto;background-size: 100% auto;background-position: center 0;background-repeat: no-repeat;}
+body{background-color: #121C5F;}
+.wrap {margin: auto;max-width: 640px;background-image: url(../image/bg1.jpg);overflow: hidden;}
+section{ color: #fff; }
+.btn{ display: inline-block;  -webkit-background-size: 547px;   background-size: 547px;  background-repeat: no-repeat; background-image: url(../image/btn.png);}
+.btn span{ display: inline-block; width: 0; height: 0; overflow:hidden; font: 0/0 sans-serif; }
+.btn:active{ opacity: .9; }
+.startbtn{width:60%;margin:auto;}
+.btn-go { display: block; margin: 48px auto 0px; width: 200px; height: 75px;background-position: 0 0; }
+.page2 { display: none; }
+.bg-1 { visibility: hidden; }
+.bg-2 { background: url(../image/bg2-2.jpg) 0 0 no-repeat; -webkit-background-size: 100% auto; background-size: 100% auto; }
+.bg-2 .active { -webkit-animation:flash 1.5s 0.2s infinite ease both; }
+.time { display: none; position: absolute; top: 20px; left: 0; width: 100%; text-align: center; font-size: 24px; }
+.score { display: none; position: absolute; color:red;z-index:99;right:20px;top:20px;font-size: 24px; }
+#canvas { position: absolute; top: 0; left: 0; width:100%;height:100%;}
+.icon-play { display: none; position: absolute; top: 10px; right: 10px; width: 29px; height: 25px; background: url(../image/icon.png) 0 0 no-repeat; -webkit-background-size: 100%; background-size: 100%; }
+.icon-off { background-position: 0 -25px; }
+
+/*弹窗*/
+.pop-wp{ display: none; }
+.pop { position: fixed; top: 50%; left: 50%; margin-left: -160px; margin-top: -147px; width: 320px; height: 275px; background: url(../image/pop.png) 0 0 no-repeat; -webkit-background-size: 100% auto; background-size: 100% auto; z-index:1000; color: #333333; }
+ .share-tips { position: absolute; top: 0; right: 10px; width: 100%; padding-top: 35px; background: url(../image/tips.png) right 0 no-repeat; -webkit-background-size: 74px; background-size: 74px; color: #fff; font-size: 14px; text-align: center; z-index: 2000; }
+ .pop-wp .mask { position: fixed; top: 0;background-image: url(../image/bg1.jpg); left: 0; right: 0; bottom: 0; width: 100%; height: 100%; z-index: 100; }
+ #tips .mask { background: rgba(0,0,0,0.5); }
+ #tips .mask{ z-index: 101; }
+ .pop-con { margin: 33px auto; width: 250px; text-align: center; color: #666; }
+ .pop .p1 { margin: auto; width: 200px; }
+ .pop .p2 { color: #F52B62; font-size: 14px; }
+.pop .btns .btn{ display: inline-block; width: 96px; height: 35px; }
+.btn-share { width: 205px; height: 68px; background-position: -244px 0; }
+.btn-back { background-position: -448px 0; }
+.btn-more { background-position: -448px -35px; }
+
+@-webkit-keyframes flash{
+	0%{
+		opacity: 0
+	} 50%{
+		opacity: 1;
+	} 100%{
+		opacity: 0
+	} 
+}
+
+.db {display: block !important;}
+.aliForPc {display:none;position:fixed;right:5px;top:5px;overflow:hidden;z-index:99999;}

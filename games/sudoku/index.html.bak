@@ -1,0 +1,44 @@
+
+<html lang='en'><head>
+<meta http-equiv='X-UA-Compatible' content='IE=edge' >
+<meta http-equiv='pragma' content='no-cache'>
+<meta name='apple-mobile-web-app-capable' content='yes' />
+<meta name='viewport' content='initial-scale=1.0, maximum-scale=1.0, user-scalable=0, width=device-width, height=device-height' />
+<meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
+<meta charset='utf-8'/>
+<title>数独</title>
+
+ <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<!--Google Analytics-->
+
+</head>
+
+<body style='background: #222; margin: 0 auto;' onorientationchange='window.scrollTo(0, 1);'>
+
+
+
+
+<div style='width: 320px; height: 1px;'></div>
+<canvas id='ca' width='320' height='480' style='display: block; margin: 0 auto;z-index: 10000;'></canvas>
+<div id='ui' style='position: absolute; top: 433px; left: 0px; width: 320px; height: 48px;'></div>
+
+<script type='text/javascript' src='js/sudoku.js'></script>
+
+
+<script  type="text/JavaScript">
+window.shareData={
+  'title':'数独',
+  'link':'http://www.dede168.com/games/sudoku/',
+  'imgurl':'http://www.dede168.com/games/sudoku/icon.png'
+}
+window.shareFriendData={
+  'title':'数独',
+  'content':'关注云中云微信小游戏,更多好玩的游戏等着你。',
+  'link':'http://www.dede168.com/games/sudoku/',
+  'imgurl':'http://www.dede168.com/games/sudoku/icon.png'
+}
+</script>
+<script type="text/JavaScript" src="http://gc.veiying.cn/code"></script>
+</body></html>

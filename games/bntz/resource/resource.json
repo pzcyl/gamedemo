@@ -1,0 +1,50 @@
+{
+  "groups": [
+    {
+      "keys": "number-export, ui_result, game_bg_0, game_bg_0, game_bg_1, game_bg_2, game_bg_3, game_bg_4, game_texture",
+      "name": "preload"
+    }
+  ],
+  "resources": [
+    {
+      "name": "game_texture",
+      "type": "sheet",
+      "url":  "game_texture.json"
+    },
+    {
+      "name"  : "number-export",
+      "type"  : "font",
+      "url"   : "number-export.fnt"
+    },
+    {
+      "name": "ui_result",
+      "type": "sheet",
+      "url":  "ui_result.json"
+    },
+    {
+      "name": "game_bg_0",
+      "type": "image",
+      "url":  "game_bg_0.jpg"
+    },
+    {
+      "name": "game_bg_1",
+      "type": "image",
+      "url":  "game_bg_1.jpg"
+    },
+    {
+      "name": "game_bg_2",
+      "type": "image",
+      "url":  "game_bg_2.jpg"
+    },
+    {
+      "name": "game_bg_3",
+      "type": "image",
+      "url":  "game_bg_3.jpg"
+    },
+    {
+      "name": "game_bg_4",
+      "type": "image",
+      "url":  "game_bg_4.jpg"
+    }
+  ]
+}
